@@ -1,0 +1,27 @@
+﻿@typeparam TItem
+
+@foreach(var item in Items)
+{
+    <MudCard>
+        <MudCardContent>
+            <MudText>@CardTitle(item)</MudText>
+            <MudText Typo="Typo.body2">
+                @CardBody(item)
+            </MudText>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Text" Color="Color.Primary">@CardButtonLabel(item)</MudButton>
+        </MudCardActions>
+    </MudCard>
+}
+
+@code {
+    [Parameter]
+    public List<TItem> Items { get; set; } = default!;
+    [Parameter]
+    public RenderFragment<TItem> CardTitle { get; set; } = default!;
+    [Parameter]
+    public RenderFragment<TItem> CardButtonLabel { get; set; } = default!;
+    [Parameter]
+    public RenderFragment<TItem> CardBody { get; set; } = default!;
+}

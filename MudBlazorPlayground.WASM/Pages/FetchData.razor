@@ -1,4 +1,5 @@
 ﻿@page "/fetchdata"
+@using MudBlazorPlayground.Shared.Components
 @inject HttpClient Http
 
 <PageTitle>Weather forecast</PageTitle>
@@ -13,6 +14,9 @@
 }
 else
 {
+    <CardList TItem="WeatherForecast" Items=@forecasts>
+        @context.Date.ToShortDateString()
+    </CardList>
     <table class="table">
         <thead>
             <tr>
@@ -37,11 +41,12 @@ else
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    private List<WeatherForecast>? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        var forecastsArray = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        forecasts = forecastsArray!.ToList();
     }
 
     public class WeatherForecast

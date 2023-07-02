@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorPlayground.WASM", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorPlayground.Mobile", "MudBlazorPlayground.Mobile\MudBlazorPlayground.Mobile.csproj", "{2176BE2E-2893-419F-A3CD-826245FCB9A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorPlayground.Shared", "MudBlazorPlayground.Shared\MudBlazorPlayground.Shared.csproj", "{F24808A2-A8BD-455C-947C-BFECB7C73FDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MudBlazorPlayground.Shared", "MudBlazorPlayground.Shared\MudBlazorPlayground.Shared.csproj", "{F24808A2-A8BD-455C-947C-BFECB7C73FDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
