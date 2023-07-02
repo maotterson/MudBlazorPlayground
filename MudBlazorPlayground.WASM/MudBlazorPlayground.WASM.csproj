@@ -12,4 +12,8 @@
     <PackageReference Include="MudBlazor" Version="6.6.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MudBlazorPlayground.Shared\MudBlazorPlayground.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
