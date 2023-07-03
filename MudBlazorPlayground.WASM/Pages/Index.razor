@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject ISnackbar Snackbar
 
 <PageTitle>Index</PageTitle>
 
@@ -6,4 +7,4 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<MudButton Color="Color.Error" @onclick="@(() => Snackbar.Add("Reactor meltdown is imminent", Severity.Error))">Create an error</MudButton>
