@@ -15,7 +15,12 @@
 else
 {
     <CardList TItem="WeatherForecast" Items=@forecasts>
-        @{/*todo populate fragment with data*/}
+        <CardTitle>@context.Date</CardTitle>
+        <CardBody>
+            <p>High: @context.TemperatureF</p>
+            <p>@context.Summary</p>
+        </CardBody>
+        <CardButtonLabel>Click me plz</CardButtonLabel>
     </CardList>
     <table class="table">
         <thead>
