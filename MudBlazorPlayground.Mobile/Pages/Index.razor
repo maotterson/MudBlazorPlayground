@@ -2,14 +2,18 @@
 @inject CountryService countryService;
 @using MudBlazorPlayground.Mobile.Data;
 
-@if (_loading)
+@foreach(var country in _countries)
 {
-    <CountryCardSkeleton></CountryCardSkeleton>
+    @if (_loading)
+    {
+        <CountryCardSkeleton></CountryCardSkeleton>
+    }
+    else
+    {
+        <CountryCard Country="country"></CountryCard>
+    }
 }
-else
-{
-    <CountryCard></CountryCard>
-}
+
 
 @code{
     private bool _loading = true;
@@ -20,11 +24,7 @@ else
     {
         _loading = true;
         _countries = await countryService.GetCountriesAsync();
-    }
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        base.OnAfterRender(firstRender);
         _loading = false;
     }
+
 }
