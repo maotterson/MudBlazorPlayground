@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
 using MudBlazorPlayground.Mobile.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MudBlazorPlayground.Mobile;
 public static class MauiProgram
@@ -22,8 +23,9 @@ public static class MauiProgram
         builder.Services.AddBlazorWebViewDeveloperTools();
 		builder.Logging.AddDebug();
 #endif
-
+        builder.Services.AddSingleton<HttpClient>();
         builder.Services.AddSingleton<WeatherForecastService>();
+        builder.Services.AddSingleton<CountryService>();
 
         return builder.Build();
     }
