@@ -1,4 +1,4 @@
-﻿<MudPaper Width="250px" Class="py-3" Elevation="0">
+﻿<MudDrawer @bind-Open="@open" Anchor="@anchor" Elevation="1" Variant="@DrawerVariant.Temporary">
     <MudNavMenu>
         <MudText Typo="Typo.h6" Class="px-4">My Application</MudText>
         <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Secondary Text</MudText>
@@ -11,16 +11,16 @@
             <MudNavLink Href="/security">Security</MudNavLink>
         </MudNavGroup>
     </MudNavMenu>
-</MudPaper>
+</MudDrawer>
 
 
 @code {
-    private bool collapseNavMenu = true;
+    bool open;
+    Anchor anchor;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    void OpenDrawer(Anchor anchor)
     {
-        collapseNavMenu = !collapseNavMenu;
+        open = true;
+        this.anchor = anchor;
     }
 }
