@@ -1,5 +1,5 @@
 ﻿@inherits LayoutComponentBase
-<MudThemeProvider />
+<MudThemeProvider IsDarkMode="true"/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -19,7 +19,7 @@
             <MudNavLink Match="NavLinkMatch.All" Href="/counter">Counter</MudNavLink>
         </MudNavMenu>
     </MudDrawer>
-    <MudMainContent Class="pt-16 px-16">
+    <MudMainContent Class="pt-16 px-4">
         <MudContainer Class="mt-6">
             @Body
         </MudContainer>

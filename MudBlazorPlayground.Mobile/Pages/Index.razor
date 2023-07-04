@@ -4,4 +4,21 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@if (_loading)
+{
+    <CountryCardSkeleton></CountryCardSkeleton>
+}
+else
+{
+    <CountryCard></CountryCard>
+}
+
+@code{
+    private bool _loading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(5000);
+        _loading = false;
+    }
+}
