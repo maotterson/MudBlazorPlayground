@@ -2,17 +2,19 @@
 @inject CountryService countryService;
 @using MudBlazorPlayground.Mobile.Data;
 
-@foreach(var country in _countries)
-{
-    @if (_loading)
+<MudPaper Class="flex-row d-flex flex-wrap ">
+    @foreach (var country in _countries)
     {
-        <CountryCardSkeleton></CountryCardSkeleton>
+        @if (_loading)
+        {
+            <CountryCardSkeleton></CountryCardSkeleton>
+        }
+        else
+        {
+            <CountryCard Country="country"></CountryCard>
+        }
     }
-    else
-    {
-        <CountryCard Country="country"></CountryCard>
-    }
-}
+</MudPaper>
 
 
 @code{
