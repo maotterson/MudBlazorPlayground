@@ -1,4 +1,4 @@
-﻿@using MudBlazorPlayground.WASM.Data;
+﻿@using MudBlazorPlayground.WASM.Domain;
 <MudCard>
     <MudCardMedia Image=@Country.Flag Height="100" />
     <MudCardContent>
@@ -14,6 +14,6 @@
 
 @code{
     [Parameter]
-    public CountryFlag Country { get; set; }
+    public CountryFlag Country { get; set; } = default!;
 
 }

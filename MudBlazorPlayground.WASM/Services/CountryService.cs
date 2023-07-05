@@ -24,7 +24,7 @@ public class CountryService
                 throw new FileNotFoundException();
             }
 
-            return await JsonSerializer.DeserializeAsync<List<CountryFlag>>(stream)!;
+            return await JsonSerializer.DeserializeAsync<List<CountryFlag>>(stream) ?? throw new NullReferenceException();
         }
     }
 }
