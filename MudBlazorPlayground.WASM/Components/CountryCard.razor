@@ -1,0 +1,19 @@
+﻿@using MudBlazorPlayground.Mobile.Data;
+<MudCard>
+    <MudCardMedia Image=@Country.Flag Height="100" />
+    <MudCardContent>
+        <MudText Typo="Typo.h5">@Country.Country</MudText>
+        <MudText Typo="Typo.body2">Old paint found on a stone house door.</MudText>
+        <MudText Typo="Typo.body2">This photo was taken in a small village in Istra Croatia.</MudText>
+    </MudCardContent>
+    <MudCardActions>
+        <MudButton Variant="Variant.Text" Color="Color.Primary">Share</MudButton>
+        <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+    </MudCardActions>
+</MudCard>
+
+@code{
+    [Parameter]
+    public CountryFlag Country { get; set; }
+
+}
