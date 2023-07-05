@@ -5,20 +5,23 @@
 
 <PageTitle>Countries</PageTitle>
 
-@if (countries is not null)
-{
-    foreach(var country in countries)
+<MudPaper Class="flex-row d-flex flex-wrap">
+    @if (countries is not null)
     {
-        <CountryCard Country="country"></CountryCard>
+        foreach (var country in countries)
+        {
+            <CountryCard Country="country"></CountryCard>
+        }
     }
-}
-else
-{
-    for(var i=0; i<20; i++)
+    else
     {
-        <CountryCardSkeleton></CountryCardSkeleton>
+        for (var i = 0; i < 20; i++)
+        {
+            <CountryCardSkeleton></CountryCardSkeleton>
+        }
     }
-}
+</MudPaper>
+
 
 @code {
     private List<CountryFlag>? countries;
