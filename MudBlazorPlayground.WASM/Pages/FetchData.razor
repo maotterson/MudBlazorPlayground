@@ -1,5 +1,6 @@
 ﻿@page "/fetchdata"
 @using MudBlazorPlayground.Shared.Components
+@using MudBlazorPlayground.WASM.Domain;
 @inject HttpClient Http
 
 <PageTitle>Weather forecast</PageTitle>
@@ -8,34 +9,27 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (forecasts == null)
+@if (countries is not null)
 {
-    <p><em>Loading...</em></p>
+    foreach(var country in countries)
+    {
+        <MudBlazorPlayground.WASM.Components.CountryCard Country="country"></MudBlazorPlayground.WASM.Components.CountryCard>
+    }
 }
 else
 {
-    <MudCard>
-
-    </MudCard>
+    for(var i=0; i<20; i++)
+    {
+        <MudBlazorPlayground.WASM.Components.CountryCardSkeleton></MudBlazorPlayground.WASM.Components.CountryCardSkeleton>
+    }
 }
 
 @code {
-    private List<WeatherForecast>? forecasts;
+    private List<CountryFlag>? countries;
 
     protected override async Task OnInitializedAsync()
     {
-        var forecastsArray = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
-        forecasts = forecastsArray!.ToList();
-    }
-
-    public class WeatherForecast
-    {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string? Summary { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        var forecastsArray = await Http.GetFromJsonAsync<CountryFlag[]>("country-by-flag.json");
+        countries = forecastsArray!.ToList();
     }
 }
