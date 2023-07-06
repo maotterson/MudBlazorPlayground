@@ -22,6 +22,9 @@
     <Content Update="wwwroot\country-by-flag.json">
       <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
     </Content>
+    <Content Update="wwwroot\dotnet_bot.svg">
+      <BaseSize>168,208</BaseSize>
+    </Content>
   </ItemGroup>
 
 </Project>

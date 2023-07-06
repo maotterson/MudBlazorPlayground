@@ -13,14 +13,14 @@ a, .btn-link {
 }
 
 .loading-div {
-    background-image: url("/icon-192.png");
+    background-image: url("/dotnet_bot.svg");
     animation: ease-in-out;
     background-position:center;
     background-size:contain;
     height:50vh;
     width:50vw;
     background-repeat:no-repeat;
-    margin:30vh auto;
+    margin:20vh auto;
 }
 
 .btn-primary {
