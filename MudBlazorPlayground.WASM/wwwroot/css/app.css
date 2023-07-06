@@ -11,16 +11,24 @@ h1:focus {
 a, .btn-link {
     color: #0071c1;
 }
+.loading-container {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    background-color:black;
+}
 
-.loading-div {
+.loading-content {
     background-image: url("/dotnet_bot.svg");
     animation: ease-in-out;
-    background-position:center;
-    background-size:contain;
-    height:50vh;
-    width:50vw;
-    background-repeat:no-repeat;
-    margin:20vh auto;
+    background-position: center;
+    background-size: contain;
+    height: 50vh;
+    width: 50vw;
+    background-repeat: no-repeat;
+    margin: 20vh auto;
 }
 
 .btn-primary {
